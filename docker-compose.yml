@@ -1,0 +1,16 @@
+services:
+  databaseHPI:
+    image: postgres:15
+    container_name: datenbanksystemeHPI
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 01042024Kz
+      POSTGRES_DB: datenbanksystemeHPI
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
